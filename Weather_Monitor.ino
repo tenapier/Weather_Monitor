@@ -1,3 +1,12 @@
+/*  4/24/22
+ *  This is a program originating from Chilli Chump's Beginner's Guide to Automation YouTube Series Feb. 21, 2020 until Jan. 2021.
+ *  This is mainly from Episode 14-16. I have modified it with different BME sensors (680 as opposed to 280) and also collecting
+ *  light data. Additional features pertinant to my project of collecting weather inside a chicken coop and outside, and controlling
+ *  actuators will be added, and unique to this project. Utilizing 30 pin ESP32 Dev. Module placed 4/24/22 in exchange for a 38 pin 
+ *  ESP32 Dev. Module that was inconsistant with needing to be restarted everyday or so.
+ *  Will be using Git for Version assistance, 4/24/22.
+*/
+
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_BME680.h>
