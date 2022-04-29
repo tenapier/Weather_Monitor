@@ -32,9 +32,9 @@ PubSubClient client(espClient);
 #define mqttLight1 "chickenCoop/light1"
 
 #define mqttTemp2 "outside/temp2"
-#define mqttHum2 "chickenCoop/hum2"
-#define mqttPress2 "chickenCoop/press2"
-#define mqttGas2 "chickenCoop/gas2"
+#define mqttHum2 "outside/hum2"
+#define mqttPress2 "outside/press2"
+#define mqttGas2 "outside/gas2"
 #define mqttLight2 "outside/light2"
 
 //MQTT incoming
