@@ -45,11 +45,14 @@ PubSubClient client(espClient);
 #define BME_MISO 19
 #define BME_MOSI 23
 #define BME_CS 5
+#define BME_CS 15
 
-Adafruit_BME680 bme1; // I2C
+//Adafruit_BME680 bme1; // I2C
 //Adafruit_BME680 bme2; // I2C
-//Adafruit_BME680 bme2(BME_CS); // hardware SPI
-Adafruit_BME680 bme2(BME_CS, BME_MOSI, BME_MISO,  BME_SCK);
+Adafruit_BME680 bme1(15);
+Adafruit_BME680 bme2(5); // hardware SPI
+//Adafruit_BME680 bme1(15, BME_MOSI, BME_MISO, BME_SCK);
+//Adafruit_BME680 bme2(5, BME_MOSI, BME_MISO,  BME_SCK);
 
 const byte lightPin1 = 34;
 const byte lightPin2 = 35;
@@ -64,6 +67,9 @@ unsigned int sendDelay = 10000; //delay before sending sensor info via MQTT
 
 const int tempThresholdHigh = 140;
 const int tempThresholdLow = -20;
+
+const int Relay = 26;
+const int Relay2 = 27;
 
 
 
@@ -96,8 +102,8 @@ void setup() {
   delay(5000);
   
   unsigned status;
-  //status = bme1.begin(0x76);
-  status = bme2.begin(0X76); 
+  status = bme1.begin();
+  status = bme2.begin(); 
 }
 
 bool getValues() {
